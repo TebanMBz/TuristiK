@@ -1,0 +1,20 @@
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #f8f9fa;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background:#000000;
+}
+
+.custom-control-label{
+    font-size: 18px;
+}
+
+.custom-control-input{
+    font-size: 18px;
+}
+
+.l{
+    color : red;
+}
