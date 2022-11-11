@@ -8,7 +8,7 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/public/views/partials')
 
 app.get('/', function (req, res) {
-    res.render(__dirname + '/public/views/admin/formsTemplate.hbs')
+    res.render(__dirname + '/public/views/admin/dashboard.hbs')
 })
 
 app.get('/table', function (req, res) {
@@ -20,7 +20,15 @@ app.get('/dashboard', function (req, res) {
 })
 
 app.get('/packages', function (req, res) {
-    res.render(__dirname + '/public/views/admin/packages.hbs')
+    res.render(__dirname + '/public/views/admin/Packages/packagesList')
+})
+
+app.get('/createPackage', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Packages/createPackage')
+})
+
+app.get('/editPackage', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Packages/editPackage')
 })
 
 app.get('/calendar', function (req, res) {
