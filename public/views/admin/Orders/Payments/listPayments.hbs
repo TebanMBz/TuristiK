@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Plantilla tabla</title>
+    <title>Abonos Admin</title>
 
     <!-- Custom fonts for this template -->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,21 +48,11 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- DataTable name -->
+                    <!-- DataTable payments -->
                     <div class="card shadow border-left-dark mb-4">
                         <div class="card-header text-left py-3">
-                            <div class="row">
-                                <div class="col text-dark">
-                                    <h2 class="m-0 font-weight-bold">Nombre</h2>
-                                </div>
-                                <div class="col">
-                                    <div class="text-dark d-flex align-items-center justify-content-end">
-                                        <a class="d-flex align-items-center text-decoration-none text-dark" href="#">
-                                            <h4 class="m-0 font-weight-bold">Agregar nombre</h4>
-                                            <i class="ml-2 fas fa-plus-square fa-2x"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="text-dark">
+                                <h2 class="m-0 font-weight-bold">Abonos</h2>
                             </div>
                         </div>
                         <div class="card-body">
@@ -70,12 +60,26 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>ID Abono</th>
+                                            <th>ID Pedido</th>
+                                            <th>Monto</th>
+                                            <th>Restante</th>
+                                            <th>Fecha</th>
+                                            <th>Comprobante</th>
+                                            <th>Estado</th>
                                             <th>Editar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><a href="#"><i class="fas fa-edit text-dark"></i></a>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>750000</td>
+                                            <td>250000</td>
+                                            <td>02/08/2022</td>
+                                            <td>img</td>
+                                            <td>Pendiente</td>
+                                            <td><a href="/editPayment"><i class="fas fa-edit text-dark"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
