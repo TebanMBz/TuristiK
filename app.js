@@ -13,6 +13,10 @@ app.get('/', function (req, res) {
     res.render(__dirname + '/public/views/admin/dashboard.hbs')
 })
 
+app.get('/login', function (req, res) {
+    res.render(__dirname + '/public/views/admin/login.hbs')
+})
+
 app.get('/table', function (req, res) {
     res.render(__dirname + '/public/views/admin/tablesTemplate.hbs',
     )
@@ -56,15 +60,15 @@ app.get('/CreateRol', function (req, res) {
     res.render(__dirname + '/public/views/admin/Roles/CreateRol.hbs')
 })
 
-//---------------------------------------------------------------
+//Costumers--------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
-    res.render(__dirname + '/public/views/admin/formsTemplate.hbs')
-
+    res.render(__dirname + '/public/views/admin/costumers.hbs')
 })
 
-
-// <-- ORDERS MODULE -->
+app.get('/createCostumers', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Costumers/createCostumers.hbs')
+})
 
 app.get('/orders', function (req, res) {
     res.render(__dirname + '/public/views/admin/orders/index')
@@ -102,15 +106,20 @@ app.get('/createPayment', function (req, res) {
     res.render(__dirname + '/public/views/admin/orders/payments/create')
 })
 
-
-// <-- END OF ORDERS MODULE -->
-
-
 app.get('/employees', function (req, res) {
-    res.render(__dirname + '/public/views/admin/employees.hbs')
+    res.render(__dirname + '/public/views/admin/Employees/employees.hbs')
 
 })
 
+app.get('/createEmployees', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Employees/createEmployees.hbs')
+})
+
+app.get('/editEmployees', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Employees/editEmployees.hbs')
+})
+
+//-----------------------------------------------------------------
 app.get('/users', function (req, res) {
     res.render(__dirname + '/public/views/admin/users.hbs')
 })
