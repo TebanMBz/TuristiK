@@ -19,6 +19,8 @@ app.get('/dashboard', function (req, res) {
     res.render(__dirname + '/public/views/admin/dashboard.hbs')
 })
 
+//<----------------- Packages --------------->
+
 app.get('/packages', function (req, res) {
     res.render(__dirname + '/public/views/admin/Packages/packagesList')
 })
@@ -30,6 +32,8 @@ app.get('/createPackage', function (req, res) {
 app.get('/editPackage', function (req, res) {
     res.render(__dirname + '/public/views/admin/Packages/editPackage')
 })
+
+//<------------------ End packages ------------>
 
 app.get('/calendar', function (req, res) {
     res.render(__dirname + '/public/views/admin/calendar.hbs')
@@ -52,7 +56,7 @@ app.get('/CreateRol', function (req, res) {
 //---------------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
-    res.render(__dirname + '/public/views/admin/costumers.hbs')
+    res.render(__dirname + '/public/views/admin/formsTemplate.hbs')
 
 })
 
