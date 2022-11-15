@@ -10,7 +10,7 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/public/views/partials')
 
 app.get('/', function (req, res) {
-    res.render(__dirname + '/public/views/admin/formsTemplate.hbs')
+    res.render(__dirname + '/public/views/admin/dashboard.hbs')
 })
 
 app.get('/table', function (req, res) {
@@ -23,16 +23,36 @@ app.get('/dashboard', function (req, res) {
 })
 
 app.get('/packages', function (req, res) {
-    res.render(__dirname + '/public/views/admin/packages.hbs')
+    res.render(__dirname + '/public/views/admin/Packages/packagesList')
+})
+
+app.get('/createPackage', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Packages/createPackage')
+})
+
+app.get('/editPackage', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Packages/editPackage')
 })
 
 app.get('/calendar', function (req, res) {
     res.render(__dirname + '/public/views/admin/calendar.hbs')
 })
 
+//ROLES-----------------------------------------------------------
+
 app.get('/roles', function (req, res) {
-    res.render(__dirname + '/public/views/admin/roles.hbs')
+    res.render(__dirname + '/public/views/admin/Roles/Index.hbs')
 })
+
+app.get('/EditRol', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Roles/EditRol.hbs')
+})
+
+app.get('/CreateRol', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Roles/CreateRol.hbs')
+})
+
+//---------------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
     res.render(__dirname + '/public/views/admin/costumers.hbs')

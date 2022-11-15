@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Paquetes-Turistik</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/site.css" />
+
+    <!-- Custom styles for this page -->
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        {{>sidebar}}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                {{>topbar}}
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- DataTable Roles -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-dark">
+                                <span>Paquetes</span>
+                                <a href="/createPackage"><i class="fas
+                                            fa-plus-square text-dark"></i></a>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered
+                                        border-left-dark" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Destino</th>
+                                            <th>Detalles</th>
+                                            <th>Transporte</th>
+                                            <th>Hotel</th>
+                                            <th>Fechas</th>
+                                            <th>Lugar de salida</th>
+                                            <th>Cupos</th>
+                                            <th>Cupos disponibles</th>
+                                            <th>Precio</th>
+                                            <th>Estado</th>
+                                            <th>Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Escapada al peñol</th>
+                                            <th>Guatape</th>
+                                            <th>
+                                                Lorem ipsum dolor, sit amet
+                                                consectetur adipisicing
+                                                elit.
+                                            </th>
+                                            <th>Aereo</th>
+                                            <th>Las lorenas</th>
+                                            <th>
+                                                <span> Salida:15/09/2022
+                                                </span>
+                                                <br />
+                                                <span> Regreso:20/09/2022
+                                                </span>
+                                            </th>
+                                            <th>Terminal del norte</th>
+                                            <th>40</th>
+                                            <th>40</th>
+                                            <th>300.000</th>
+                                            <th>Habilitado</th>
+                                            <td>
+                                                <a href="/editPackage" class="font-weight-bold
+                                                        d-flex
+                                                        justify-content-center
+                                                        align-items-center">
+                                                    <i class="fas fa-edit
+                                                            text-dark"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>San Andres Islas</th>
+                                            <th>Guatape</th>
+                                            <th>
+                                                Lorem ipsum dolor, sit amet
+                                                consectetur adipisicing
+                                                elit.
+                                            </th>
+                                            <th>Terrestre</th>
+                                            <th>Caldavid</th>
+                                            <th>
+                                                <span>Salida:09/03/2022</span>
+                                                <br />
+                                                <span>Regreso:15/03/2022</span>
+                                            </th>
+                                            <th>Hospital de caldas</th>
+                                            <th>58</th>
+                                            <th>58</th>
+                                            <th>750.000</th>
+                                            <th>Habilitado</th>
+                                            <td>
+                                                <a href="/editPackage" class="font-weight-bold
+                                                        d-flex
+                                                        justify-content-center
+                                                        align-items-center">
+                                                    <i class="fas fa-edit
+                                                            text-dark"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-dark">Paquetes
+                                mas vendidos</h4>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="row">
+                           
+                            <div class="card-body col-4">
+                                <div class="chart-pie">
+                                    <div class="w-100">
+                                        <center>
+                                            <img src="http://chipviajero.com/wp-content/uploads/2018/05/Como-Llegar-a-Tol%C3%BA-Y-Cove%C3%B1as-Chip-Viajero-7.jpg" alt="" class="w-100">
+                                        </center>
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="h3 font-weight-bold text-dark">Vamos a conocer Tolu</p>
+                                <p class="h5 font-weight-bold text-dark">Puntuacion:
+                                    <i class="bi bi-star-fill text-ligth"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </p>
+                            </div>
+                            <div class="card-body col-4">
+                                <div class="chart-pie">
+                                    <div class="w-100">
+                                        <center>
+                                            <img src="https://viajareacolombia.com/wp-content/uploads/2020/07/piedra-del-penol-1000x562.png" alt="" class="w-100">
+                                        </center>
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="h3 font-weight-bold text-dark">Escapada
+                                    al peñol</p>
+                                <p class="h5 font-weight-bold text-dark">Puntuacion:
+                                    <i class="bi bi-star-fill text-ligth"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </p>
+                            </div>
+                            
+                            <div class="card-body col-4">
+                                <div class="chart-pie">
+                                    <div class="w-100">
+                                        <center>
+                                            <img src="https://astelus.com/wp-content/viajes/San-Andres-una-isla-paradisiaca-del-Caribe.jpg" alt="" class="w-100">
+                                        </center>
+
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="h3 font-weight-bold text-dark">San Andres Isla</p>
+                                <p class="h5 font-weight-bold text-dark">Puntuacion:
+                                    <i class="bi bi-star-fill text-ligth"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to
+                        Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Select "Logout" below if you are ready to end your
+                    current session.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--SweetAlert JavaScript-->
+    <script src="../js/sweetalert2.all.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/datatables-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-pie-demo.js"></script>
+    <script src="../../js/demo/chart-bar-demo.js"></script>
+
+    <script>
+        $("#deletePackage").click(function () {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'dark'
+                    )
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
