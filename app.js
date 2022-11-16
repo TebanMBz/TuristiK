@@ -63,7 +63,7 @@ app.get('/CreateRol', function (req, res) {
 //Costumers--------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
-    res.render(__dirname + '/public/views/admin/costumers.hbs')
+    res.render(__dirname + '/public/views/admin/Costumers/costumers.hbs')
 })
 
 app.get('/createCostumers', function (req, res) {
