@@ -14,7 +14,11 @@ app.get('/', function (req, res) {
 })
 
 app.get('/login', function (req, res) {
-    res.render(__dirname + '/public/views/admin/login.hbs')
+    res.render(__dirname + '/public/views/admin/login.hbs',
+    {
+        email : "avarga6@misena.edu.co",
+        pass : "dinocrack1.KRTV"
+    })
 })
 
 app.get('/table', function (req, res) {
@@ -63,7 +67,7 @@ app.get('/CreateRol', function (req, res) {
 //Costumers--------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
-    res.render(__dirname + '/public/views/admin/costumers.hbs')
+    res.render(__dirname + '/public/views/admin/Costumers/costumers.hbs')
 })
 
 app.get('/createCostumers', function (req, res) {
