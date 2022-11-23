@@ -14,12 +14,12 @@ $('#btnCancelarRol').click(function(){
 $('#btnCreateRol').click(function() {
 
     //VALIDATE NAME
-    if($("#Name").val().length < 1) {
+    if($("#RolName").val().length < 1) {
         Swal.fire({
             icon: 'warning',
             title: 'El campo Nombre es obligatorio.',
             showConfirmButton: false,
-            timer: 2500
+            timer: 4500
             
         }).then(function(){
             window.location='/CreateRol'
@@ -68,7 +68,7 @@ $('#btnCreateRol').click(function() {
 $('#btnUpdateRol').click(function() {
 
     //VALIDATE NAME
-    if($("#Name").val().length < 1) {
+    if($("#RolName").val().length < 1) {
         Swal.fire({
             icon: 'warning',
             title: 'El campo Nombre es obligatorio.',
