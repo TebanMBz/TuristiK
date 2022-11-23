@@ -49,68 +49,79 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="card shadow">
+                    <div class="card shadow border-left-dark mb-4">
                         <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-success">Agregar Rol y Permisos</h4>
+                            <h4 class="m-0 font-weight-bold text-dark"><span>Agregar Rol</span></h4>
                         </div>
-                        <form action="get" class="p-5">
-                            <div class="container d-flex justify-content-start align-items-center">
-                                <div class="form-group mr-5">
-                                    <label for="" class="form-label">Nombre</label>
-                                    <input type="text" id="Name" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">Estado</label>
-                                    <select class="form-control" id="Status">
-                                        <option value="1">Habilitado</option>
-                                        <option value="0">Deshabilitado</option>
-                                    </select>
+                        <form method="get">
+                            <div class="container d-flex justify-content-start p-5">
+                                    <div class="form group col-5 mr-3">
+                                        <label for="RolName" class="form-label">Nombre</label>
+                                        <div class="input-group">
+                                            <input type="text" id="RolName" class="form-control border-left-dark rounded-right"
+                                            placeholder="Ingrese el nombre del rol">
+                                        </div>
+                                    </div>
+                                    <div class="form group col-3 mr-3">
+                                        <label for="RolStatus" class="form-label">Estado</label>
+                                        <div class="input-group">
+                                            <select class="custom-select border-left-dark" id="RolStatus">
+                                                <option value="1">Habilitado</option>
+                                                <option value="0">Deshabilitado</option>
+                                            </select>  
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="container mb-4 p-5">
+                                <h3 class="text-dark ml-2 mb-3">Permisos</h3>
+                                <div class="form group col-7 d-flex justify-content-start">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Schedule">
+                                            <label class="custom-control-label" for="Schedule">Agenda</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Users">
+                                            <label class="custom-control-label" for="Users">Usuarios</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Packages">
+                                            <label class="custom-control-label" for="Packages">Paquetes</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Orders">
+                                            <label class="custom-control-label" for="Orders">Pedidos</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Sales">
+                                            <label class="custom-control-label" for="Sales">Ventas</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Roles">
+                                            <label class="custom-control-label" for="Roles">Roles</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Employees">
+                                            <label class="custom-control-label" for="Employees">Empleados</label>
+                                        </div>
+                                        <div class="custom-control custom-switch col-6 mt-3">
+                                            <input type="checkbox" class="custom-control-input" id="Costumers">
+                                            <label class="custom-control-label" for="Costumers">Clientes</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="container mt-5 mb-4">
-                                <h3 class="text-success">Permisos</h3>
-                                <div class="row d-flex p-3">
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Schedule">
-                                        <label class="custom-control-label" for="Schedule">Agenda</label>
+                            <div class="card-footer d-flex justify-content-end">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" id="btnCancelarRol" class="btn btn-danger">Cancelar</button>
                                     </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Users">
-                                        <label class="custom-control-label" for="Users">Usuarios</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Packages">
-                                        <label class="custom-control-label" for="Packages">Paquetes</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Orders">
-                                        <label class="custom-control-label" for="Orders">Pedidos</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Sales">
-                                        <label class="custom-control-label" for="Sales">Ventas</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Roles">
-                                        <label class="custom-control-label" for="Roles">Roles</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Employees">
-                                        <label class="custom-control-label" for="Employees">Empleados</label>
-                                    </div>
-                                    <div class="custom-control custom-switch col-6 mt-3">
-                                        <input type="checkbox" class="custom-control-input" id="Costumers">
-                                        <label class="custom-control-label" for="Costumers">Clientes</label>
+                                    <div class="col">
+                                        <button type="button" id="btnCreateRol" class="btn btn-success">Guardar</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group d-flex justify-content-end mt-5">
-                                <button type="button" class="btn btn-danger" id="btnCancelarRol">
-                                    Cancelar
-                                </button>
-                                <button type="button" class="btn btn-success ml-4" id="btnCreateRol">
-                                    Crear
-                                </button>
                             </div>
                         </form>
                     </div>

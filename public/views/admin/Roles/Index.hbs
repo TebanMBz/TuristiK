@@ -51,14 +51,25 @@
                     
                     <!-- DataTable Roles -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-success"><span>Roles</span>
-                                <a href="/CreateRol"><i class="fas fa-plus-square text-success"></i></a>
-                            </h4>
+                        <div class="card-header text-left py-3">
+                            <div class="row">
+                                <div class="col text-dark">
+                                    <h2 class="m-0 font-weight-bold">Roles</h2>
+                                </div>
+                                <div class="col">
+                                    <div class="text-dark d-flex align-items-center justify-content-end">
+                                        <a class="d-flex align-items-center text-decoration-none text-dark"
+                                            href="/CreateRol">
+                                            <h4 class="m-0 font-weight-bold">Agregar Rol</h4>
+                                            <i class="ml-2 fas fa-plus-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered  border-left-dark" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -81,8 +92,9 @@
                                             <td>Administrador</td>
                                             <td>Habilitado</td>
                                             <td>
-                                                <a href="/EditRol">
-                                                <i class="fas fa-edit text-success"></i>
+                                                <a href="/EditRol" class="font-weight-bold
+                                                        d-flex align-items-center">
+                                                    <i class="fas fa-edit text-dark"></i>
                                                 </a>
                                             </td>                                     
                                         </tr>
@@ -90,10 +102,11 @@
                                             <td>Cliente</td>
                                             <td>Deshabilitado</td>
                                             <td>
-                                                <a href="EditRol">
-                                                <i class="fas fa-edit text-success"></i>
+                                                <a href="/EditRol" class="font-weight-bold
+                                                        d-flex align-items-center">
+                                                    <i class="fas fa-edit text-dark"></i>
                                                 </a>
-                                            </td> 
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
