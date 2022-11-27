@@ -108,7 +108,7 @@
                                                         class="custom-select border-left-dark" required>
                                                         <option value="1">Pendiente</option>
                                                         <option value="2">En curso</option>
-                                                        <option value="3">Concluído</option>
+                                                        <option value="3">Pagado</option>
                                                     </select>
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text rounded-right"><i
@@ -189,6 +189,8 @@
                 showConfirmButton: false,
                 timerProgressBar: true,
                 timer: 1200
+            }).then(function () {
+                window.location ='/orders' 
             })
         })
     </script>
