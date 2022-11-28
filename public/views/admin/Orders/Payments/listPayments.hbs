@@ -51,8 +51,19 @@
                     <!-- DataTable payments -->
                     <div class="card shadow border-left-dark mb-4">
                         <div class="card-header text-left py-3">
-                            <div class="text-dark">
-                                <h2 class="m-0 font-weight-bold">Abonos</h2>
+                            <div class="row">
+                                <div class="col text-dark">
+                                    <h2 class="m-0 font-weight-bold">Abonos</h2>
+                                </div>
+                                <div class="col">
+                                    <div class="text-dark d-flex align-items-center justify-content-end">
+                                        <a class="d-flex align-items-center text-decoration-none text-dark"
+                                            href="/createPayment">
+                                            <h4 class="m-0 font-weight-bold">Agregar abono</h4>
+                                            <i class="ml-2 fas fa-plus-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -60,30 +71,34 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID Abono</th>
-                                            <th>ID Pedido</th>
                                             <th>Monto</th>
                                             <th>Restante</th>
                                             <th>Fecha</th>
                                             <th>Comprobante</th>
                                             <th>Estado</th>
-                                            <th>Editar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
                                             <td>750000</td>
                                             <td>250000</td>
                                             <td>02/08/2022</td>
-                                            <td>img</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#comprobante_modal"><span
+                                                        class="font-weight-bold">Comprobar <i
+                                                            class="fas fa-search"></i></span></a></td>
                                             <td>Pendiente</td>
-                                            <td><a href="/editPayment"><i class="fas fa-edit text-dark"></i></a>
-                                            </td>
                                         </tr>
                                     </tbody>
+                                    <tr>
+                                        <th class="font-italic font-weight-bold h5" colspan="12">COSTO TOTAL:
+                                            $1'350.000 COP</th>
+                                    </tr>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="/orders" class="btn btn-primary col-2">Volver</a>
                             </div>
                         </div>
                     </div>
@@ -111,6 +126,50 @@
     <!-- Logout Modal-->
     {{> logoutModal}}
 
+    <!-- Comprobante Modal -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="comprobante_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comprobante de Pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">IMG</label>
+                    <div class="border-left-dark shadow rounded d-flex justify-content-center align-items-center mb-2">
+                        <img class="p-2" src="https://i.pinimg.com/736x/0a/37/04/0a37041f7d623d76f14be2f55ef2f00c.jpg"
+                            width="250px" alt="comprobante.png">
+                    </div>
+                    <div class="form-group mb-0">
+                        <label for="order_status" class="form-label">Estado</label>
+                        <div class="input-group">
+                            <select id="edit_payment_status" class="custom-select border-left-dark" required>
+                                <option value="1">Pendiente</option>
+                                <option value="2">Aceptado</option>
+                                <option value="3">Rechazado</option>
+                            </select>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text rounded-right"><i class="fas fa-question"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="comprobante_save" class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript-->
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -128,6 +187,23 @@
     <!-- Page level custom scripts -->
     <script src="../../js/demo/datatables-demo.js"></script>
 
+    <!--SweetAlert JavaScript-->
+    <script src="../../js/sweetalert2.all.min.js"></script>
+
+    <script>
+        $('#comprobante_save').click(() => {
+            Swal.fire({
+                title: 'Tarea exitosa!',
+                text: 'Los cambios se han guardado.',
+                icon: 'success',
+                showConfirmButton: false,
+                timerProgressBar: true,
+                timer: 1200
+            }).then(function () {
+                window.location = '/payments'
+            })
+        })
+    </script>
 </body>
 
 

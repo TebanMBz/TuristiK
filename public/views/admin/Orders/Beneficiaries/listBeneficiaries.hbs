@@ -51,8 +51,19 @@
                     <!-- DataTable Beneficiaries -->
                     <div class="card shadow border-left-dark mb-4">
                         <div class="card-header text-left py-3">
-                            <div class="text-dark">
-                                <h2 class="m-0 font-weight-bold">Beneficiarios</h2>
+                            <div class="row">
+                                <div class="col text-dark">
+                                    <h2 class="m-0 font-weight-bold">Beneficiarios</h2>
+                                </div>
+                                <div class="col">
+                                    <div class="text-dark d-flex align-items-center justify-content-end">
+                                        <a class="d-flex align-items-center text-decoration-none text-dark"
+                                            href="/createBeneficiary">
+                                            <h4 class="m-0 font-weight-bold">Agregar beneficiarios</h4>
+                                            <i class="ml-2 fas fa-plus-square fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -60,7 +71,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID Pedido</th>
                                             <th>Nombres</th>
                                             <th>Apellidos</th>
                                             <th>Documento</th>
@@ -69,11 +79,11 @@
                                             <th>Dirección</th>
                                             <th>EPS</th>
                                             <th>Precio unitario</th>
+                                            <th>Editar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
                                             <td>Esteban</td>
                                             <td>Muñoz</td>
                                             <td>1023626332</td>
@@ -82,9 +92,16 @@
                                             <td>Colombia, antioquia, bello, calle 37 #43A-56</td>
                                             <td>sura</td>
                                             <td>450000</td>
+                                            <td><a href="/createBeneficiary"><i class="fas fa-edit text-dark"></i></a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="/orders" class="btn btn-primary col-2">Volver</a>
                             </div>
                         </div>
                     </div>

@@ -23,6 +23,7 @@ app.get('/forgotPassword', function (req, res) {
 
 app.get('/method', function (req, res) {
     res.render(__dirname + '/public/views/admin/method.hbs')
+
 })
 
 app.get('/table', function (req, res) {
