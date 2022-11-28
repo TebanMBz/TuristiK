@@ -24,55 +24,73 @@
 
 <body style="background-color: #EAEDED;">
 
-    <div id="carouselExampleControls"
-    class="carousel slide"
-    data-interval="false">
+    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container w-75">
-        
+
                     <!-- Outer Row -->
                     <div class="d-flex justify-content-center align-items-center vh-100">
                         <div class=" card o-hidden border-0 shadow-lg my-5 w-50">
                             <div class="d-flex justify-content-center align-items-center mt-3">
-                                <button
-                                  class="control-prev btn btn-outline-primary border-0"
-                                  type="button"
-                                  data-target="#carouselExampleControls"
-                                  data-slide-to="0"
-                                >
-                                  Inicio de sesión
+                                <button class="control-prev btn btn-outline-primary border-0" type="button"
+                                    data-target="#carouselExampleControls" data-slide-to="0">
+                                    Inicio de sesión
                                 </button>
-                                <button
-                                  class="control-next btn btn-outline-primary border-0"
-                                  type="button"
-                                  data-target="#carouselExampleControls"
-                                  data-slide-to="1"
-                                >
-                                  Registro
+                                <button class="control-next btn btn-outline-primary border-0" type="button"
+                                    data-target="#carouselExampleControls" data-slide-to="1">
+                                    Registro
                                 </button>
-                              </div>
+                            </div>
                             <div class="card-body p-0">
                                 <!-- Nested Row within Card Body -->
                                 <div class="row">
                                     <div class="col">
                                         <div class="p-4">
                                             <div class="d-flex justify-content-center align-items-center mb-3">
-                                            <div class="row">
-                                                <div class="">
-                                                    <a href="index.html" class="btn btn-google rounded-circle ">
-                                                        <i class="fab fa-google fa-fw"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="index.html" class="btn btn-facebook rounded-circle ">
-                                                        <i class="fab fa-facebook-f fa-fw"></i>
-                                                    </a>
+                                                <div class="row">
+                                                    <div class="">
+                                                        <a href="index.html" class="btn btn-google rounded-circle ">
+                                                            <i class="fab fa-google fa-fw"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="index.html" class="btn btn-facebook rounded-circle ">
+                                                            <i class="fab fa-facebook-f fa-fw"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            </div>
-                                            <form id="login" class="user">
+                                            <!--Login form-->
+                                            <form id="login" class="user needs-validation">
                                                 <div class="form-group">
+
+                                                    <input type="email" class="form-control" id="email"
+                                                        aria-describedby="emailHelp" placeholder="Digite su correo"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Este campo es obligatorio.
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="password" id="password" class="form-control"
+                                                            id="password" placeholder="Digite su contraseña" required>
+                                                        <div class="invalid-feedback">
+                                                            Este campo es obligatorio.
+                                                        </div>
+                                                        <div class="input-group-prepend">
+                                                            <button id="show_passwordc"
+                                                                class="btn btn-secondary rounded-right" type="submit"
+                                                                onclick="ShowPassword()"> <span
+                                                                    class="fa fa-eye-slash icon "></span> </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <a href="dashboard" class="btn btn-primary btn-block" type="submit"
+                                                        id="btn-login">
+                                                        Iniciar sesión 
                                                     <input type="email" class="form-control" id="exampleInputEmail"
                                                         aria-describedby="emailHelp" placeholder="Enter Email Address..."value="{{email}}" required>
                                                 </div>
@@ -87,32 +105,43 @@
                                                 </div>
                                             </form>
                                             <div class="text-center">
-                                                <a class="small" href="" data-toggle="modal" data-target="#staticBackdrop">¿Olvidate tú contraseña?</a>
-                                                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <a class="small" href="" data-toggle="modal"
+                                                    data-target="#staticBackdrop">¿Olvidate tú contraseña?</a>
+                                                <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                                                    data-keyboard="false" tabindex="-1"
+                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
-                                                      <div class="modal-content">
-                                                        <div class="modal-header">
-                                                          <h5 class="modal-title" id="staticBackdropLabel">Recuperar contraseña</h5>
-                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                          <i class="far fa-user-circle text-center mb-2"  style="font-size:48px;color:rgb(0, 0, 0);"></i>
-                                                          <div class="input-group mb-3">
-                                                            <div class="input-group-prepend">
-                                                              <span class="input-group-text" id="basic-addon1">@</span>
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel">
+                                                                    Recuperar contraseña</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
-                                                          </div>
+                                                            <div class="modal-body">
+                                                                <i class="far fa-user-circle text-center mb-2"
+                                                                    style="font-size:48px;color:rgb(0, 0, 0);"></i>
+                                                                <div class="input-group mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">@</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Correo" aria-label="Username"
+                                                                        aria-describedby="basic-addon1">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-dismiss="modal">Cancelar</button>
+                                                                <a href="forgotPassword"
+                                                                    class="btn btn-primary">Buscar</a>
+                                                            </div>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                          <button type="button" class="btn btn-primary">Buscar</button>
-                                                        </div>
-                                                      </div>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -124,94 +153,112 @@
             </div>
             <div class="carousel-item">
                 <div class="container w-75">
-        
                     <!-- Outer Row -->
                     <div class="d-flex justify-content-center align-items-center vh-100">
                         <div class=" card o-hidden border-0 shadow-lg my-5 w-50">
                             <div class="d-flex justify-content-center align-items-center mt-3">
-                                <button
-                                  class="control-prev btn btn-outline-primary border-0"
-                                  type="button"
-                                  data-target="#carouselExampleControls"
-                                  data-slide-to="0"
-                                >
-                                  Inicio de sesión
+                                <button class="control-prev btn btn-outline-primary border-0" type="button"
+                                    data-target="#carouselExampleControls" data-slide-to="0">
+                                    Inicio de sesión
                                 </button>
-                                <button
-                                  class="control-next btn btn-outline-primary border-0"
-                                  type="button"
-                                  data-target="#carouselExampleControls"
-                                  data-slide-to="1"
-                                >
-                                  Registro
+                                <button class="control-next btn btn-outline-primary border-0" type="button"
+                                    data-target="#carouselExampleControls" data-slide-to="1">
+                                    Registro
                                 </button>
-                              </div>
+                            </div>
                             <div class="card-body p-0">
                                 <!-- Nested Row within Card Body -->
                                 <div class="row">
                                     <div class="col">
                                         <div class="p-4">
                                             <div class="d-flex justify-content-center align-items-center mb-3">
-                                            <div class="row">
-                                                <div class="">
-                                                    <a href="index.html" class="btn btn-google rounded-circle ">
-                                                        <i class="fab fa-google fa-fw"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="index.html" class="btn btn-facebook rounded-circle ">
-                                                        <i class="fab fa-facebook-f fa-fw"></i>
-                                                    </a>
+                                                <div class="row">
+                                                    <div class="">
+                                                        <a href="index.html" class="btn btn-google rounded-circle ">
+                                                            <i class="fab fa-google fa-fw"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="index.html" class="btn btn-facebook rounded-circle ">
+                                                            <i class="fab fa-facebook-f fa-fw"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            </div>
+                                            <!--Register form-->
                                             <form id="register" class="user">
                                                 <div class="row">
                                                     <div class="col-6 form-group">
-                                                        <input type="text" class="form-control" id="exampleInputEmail"
+                                                        <input type="text" class="form-control" id="name"
                                                             aria-describedby="emailHelp" placeholder="Nombre">
+                                                        <div class="invalid-feedback">
+                                                            Este campo es obligatorio.
+                                                        </div>
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="email" class="form-control" id="exampleInputPassword"
+                                                        <input type="email" class="form-control " id=""
                                                             placeholder="Correo">
+                                                        <div class="invalid-feedback">
+                                                            Este campo es obligatorio.
+                                                        </div>
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="number" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Número de teléfono">
+                                                        <input type="number" class="form-control"
+                                                            id="exampleInputPassword" placeholder="Número de teléfono">
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="number" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Documento">
+                                                        <input type="number" class="form-control"
+                                                            id="exampleInputPassword" placeholder="Documento">
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="text" class="form-control" id="exampleInputPassword"
-                                                            placeholder="EPS">
+                                                        <input type="text" class="form-control"
+                                                            id="exampleInputPassword" placeholder="EPS">
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="text" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Dirección">
+                                                        <input type="text" class="form-control"
+                                                            id="exampleInputPassword" placeholder="Dirección">
                                                     </div>
                                                     <div class="col-12 form-group">
-                                                        <input type="date" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Fecha de nacimiento">
+                                                        <input type="date" class="form-control"
+                                                            id="exampleInputPassword" placeholder="Fecha de nacimiento">
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="password" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Contraseña">
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" id="password"
+                                                                placeholder="Contraseña">
+                                                            <div class="input-group-prepend">
+                                                                <button id="show_passwordc"
+                                                                    class="btn btn-secondary rounded-right"
+                                                                    type="button" onclick="ShowPassword()"> <span
+                                                                        class="fa fa-eye-slash icon "></span> </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-6 form-group">
-                                                        <input type="password" class="form-control" id="exampleInputPassword"
-                                                            placeholder="Confirmar contraseña">
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control"
+                                                                id="passwordconfirm"
+                                                                placeholder="Confirme su contraseña">
+                                                            <div class="input-group-prepend">
+                                                                <button id="show_passwordc"
+                                                                    class="btn btn-secondary rounded-right"
+                                                                    type="button" onclick="ShowPasswordConfirm()"> <span
+                                                                        class="fa fa-eye-slash icon2 "></span> </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="custom-control custom-checkbox small justify-content-center d-flex">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                        <label class="custom-control-label" for="customCheck">Aceptar terminos y condiciones</label>
+                                                    <div
+                                                        class="custom-control custom-checkbox small justify-content-center d-flex">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="customCheck">
+                                                        <label class="custom-control-label" for="customCheck">Aceptar
+                                                            terminos y condiciones</label>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <a href="index.html" class="btn btn-primary btn-block" >
+                                                    <a href="index.html" class="btn btn-primary btn-block">
                                                         Resgistrar
                                                     </a>
                                                 </div>
@@ -223,47 +270,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="container w-75">
-            
-                    <!-- Outer Row -->
-                    <div class="d-flex justify-content-center align-items-center vh-100">
-                        <div class=" card o-hidden border-0 shadow-lg my-5 w-50">
-                            <div class="card-body p-0">
-                                <!-- Nested Row within Card Body -->
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="p-4">
-                                            <div class="d-flex justify-content-center align-items-center mb-3">
-                                            <div class="row">
-                                                <div class="">
-                                                    <a href="index.html" class="btn btn-google rounded-circle ">
-                                                        <i class="fab fa-google fa-fw"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="index.html" class="btn btn-facebook rounded-circle ">
-                                                        <i class="fab fa-facebook-f fa-fw"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            </div>                        
-                                            <div class="text-center">
-                                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                            </div>
-                                            <div class="text-center">
-                                                <a class="small" href="register.html">Create an Account!</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -273,6 +283,68 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <script>
+        //Show Password
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        function ShowPassword() {
+            var cambio = document.getElementById("password");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+
+        $(document).ready(function () {
+            $('#ShowPassword').click(function () {
+                $('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+            });
+        });
+
+        //show confirm password
+        function ShowPasswordConfirm() {
+            var cambio = document.getElementById("passwordconfirm");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+
+        $(document).ready(function () {
+            $('#showpasswordC').click(function () {
+                $('#passwordconfirm').attr('type', $(this).is(':checked') ? 'text' : 'passwordconfirm');
+            });
+        });
+
+        //Validate login form
+
+
+
+    </script>
 
 </body>
 
