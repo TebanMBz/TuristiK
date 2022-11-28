@@ -10,11 +10,19 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/public/views/partials')
 
 app.get('/', function (req, res) {
+    res.render(__dirname + '/public/views/admin/login.hbs')
+})
+
+app.get('/dashboard', function (req, res) {
     res.render(__dirname + '/public/views/admin/dashboard.hbs')
 })
 
-app.get('/login', function (req, res) {
-    res.render(__dirname + '/public/views/admin/login.hbs')
+app.get('/forgotPassword', function (req, res) {
+    res.render(__dirname + '/public/views/admin/forgotPassword.hbs')
+})
+
+app.get('/method', function (req, res) {
+    res.render(__dirname + '/public/views/admin/method.hbs')
 })
 
 app.get('/table', function (req, res) {
@@ -63,12 +71,17 @@ app.get('/CreateRol', function (req, res) {
 //Costumers--------------------------------------------------------
 
 app.get('/costumers', function (req, res) {
-    res.render(__dirname + '/public/views/admin/costumers.hbs')
+    res.render(__dirname + '/public/views/admin/Costumers/costumers.hbs')
 })
 
 app.get('/createCostumers', function (req, res) {
     res.render(__dirname + '/public/views/admin/Costumers/createCostumers.hbs')
 })
+
+app.get('/editCostumers', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Costumers/editCostumers.hbs')
+})
+//-------------------------------------------------------------------
 
 app.get('/orders', function (req, res) {
     res.render(__dirname + '/public/views/admin/orders/index')
