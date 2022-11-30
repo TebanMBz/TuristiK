@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Paquetes-Turistik</title>
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/site.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.css">
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        {{>sidebar}}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                {{>topbar}}
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- DataTable Roles -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header text-left py-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="text-dark d-flex align-items-center justify-content-center">
+                                        <h2 class="m-0 font-weight-bold">Agenda</h3>
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div class="container-fluid">
+
+                                    <div id='calendar'></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Agregar evento</h5>
+                                    
+                                </div>
+                                <form action="" id="Myform">
+                                    <div class="modal-body">
+                                    <div class="form-group">
+                                      <label for="nameEvent">Nombre del evento</label>
+                                      <input type="text" name="nameEvent" id="nameEvent" class="form-control" placeholder="Ingrese el nombre del evento" aria-describedby="helpId">
+                                      <small id="helpId" class="text-muted">Solo se puede ingresar texto</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="dateEvent">Fecha del evento</label>
+                                      <input type="date" name="dateEvent" id="dateEvent" class="form-control" placeholder="Ingrese la fecha del evento" aria-describedby="helpId">
+                                      <small id="helpId" class="text-muted">Campo obligatorio</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="dateEventEnd">Fecha inicio del evento</label>
+                                      <input type="date" name="dateEventEnd" id="dateEventEnd" class="form-control" placeholder="Ingrese la fecha del evento" aria-describedby="helpId">
+                                      <small id="helpId" class="text-muted">Campo obligatorio</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="colorEvent">Color del evento</label>
+                                      <input type="color" name="colorEvent" id="colorEvent" class="form-control" placeholder="Seleccione un color para el evento" aria-describedby="helpId">
+                                      <small id="helpId" class="text-muted">Seleccione</small>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" type="submit" id="saveEvent">Guardar evento</button>
+                                    </div>
+                                </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    {{>logoutModal}}
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--SweetAlert JavaScript-->
+    <script src="../js/sweetalert2.all.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/datatables-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="sweetalert2.min.js"></script>
+    <script src="../../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-pie-demo.js"></script>
+    <script src="../../js/demo/chart-bar-demo.js"></script>
+    <script src="../../../js/calendar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/locales-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/locales-all.js"></script>
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/core/locales/es.js'></script>
+
+</body>
+
+</html>

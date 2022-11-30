@@ -11,10 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fullcalendar/core": "^5.11.3",
+    "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/list": "^5.11.3",
+    "@fullcalendar/timegrid": "^5.11.3",
     "chart.js": "^4.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "fullcalendar": "^5.11.3",
     "hbs": "^4.2.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sweetalert2": "^11.6.15"
   }
 }

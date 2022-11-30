@@ -52,30 +52,30 @@
                         <div class="card-header py-3">
                             <h4 class="m-0 font-weight-bold text-dark"><span>Agregar paquete</span></h4>
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" novalidate id="form">
                             <div class=" card-body d-flex justify-content-center">
                                 <div class="w-100 p-2">
                                     <div class="row">
                                     <div class="form-group col-6">
                                         <label for="package_name" class="form-label">Nombre</label>
-                                            <input type="text" id="package_name" class="form-control border-left-dark"
+                                            <input type="text" id="package_name" name="package_name" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Ingrese el nombre del paquete" required>
                                             <div class="invalid-feedback">
-                                                Este campo es obligatorio.
+                                                En este campo solo se permiten letras
                                             </div>
                                     </div>
 
                                     <div class="form-group col-6">
                                         <label for="package_destiny" class="form-label">Destino</label>
                                         <div class="input-group">
-                                            <input type="text" id="package_destiny" class="form-control border-left-dark"
+                                            <input type="text" id="package_destiny" name="package_destiny" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Ingrese el destino del paquete" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
                                                         class="fas fa-umbrella-beach"></i></span>
                                             </div>
                                             <div class="invalid-feedback">
-                                                Este campo es obligatorio.
+                                                En este campo solo se permiten letras
                                             </div>
                                         </div>
                                     </div>
@@ -83,11 +83,12 @@
                                 <div class="row">
                                     <div class="form-group col-12">
                                         <label for="package_details" class="form-label">Detalles</label>
-                                            <textarea class="form-control border-left-dark"
+                                            <textarea class="form-control formularioCampo border-left-dark"
                                                 placeholder="Escriba la descripción del paquete acá"
-                                                style="height: 100px" required id="package_details"></textarea>
+                                                style="height: 100px" required id="package_details" name="package_details"></textarea>
                                             <div class="invalid-feedback">
-                                                Este campo es obligatorio.
+                                                En este campo solo se permiten letras y caracteres numericos
+                                                
                                             </div>
                                     </div>
                                 </div>
@@ -95,7 +96,7 @@
                                     <div class="form-group col-6">
                                         <label for="package_transportation" class="form-label">Transporte</label>
                                         <div class="input-group">
-                                        <select class="custom-select border-left-dark" id="package_transportation" required>
+                                        <select class="custom-select border-left-dark form-control formularioCampo" id="package_transportation" name="package_transportation" required>
                                             <option selected disabled value="">Seleccione el tipo de transporte</option>
                                             <option value="1">Aereo</option>
                                             <option value="2">Terreste</option>
@@ -109,16 +110,16 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label for="hotel" class="form-label">Hotel</label>
+                                        <label for="package_hotel" class="form-label">Hotel</label>
                                         <div class="input-group">
-                                            <input type="text" id="package_hotel" class="form-control border-left-dark"
+                                            <input type="text" id="package_hotel" name="package_hotel" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Ingrese el nombre del hotel" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
                                                         class="fa fa-hotel"></i></span>
                                             </div>
                                             <div class="invalid-feedback">
-                                                Este campo es obligatorio.
+                                                En este campo solo se permiten letras y caracteres numericos
                                             </div>
                                         </div>
                                     </div>
@@ -127,7 +128,7 @@
                                     <div class="form-group col-6">
                                         <label for="package_departure_date" class="form-label">Fecha de salida</label>
                                         <div class="input-group">
-                                            <input type="date" id="package_departure_date" class="form-control border-left-dark" required>
+                                            <input type="date" id="package_departure_date" name="package_departure_date" class="form-control formularioCampo border-left-dark" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
                                                         class="fas fa-calendar-day"></i></span>
@@ -140,7 +141,7 @@
                                     <div class="form-group col-6">
                                         <label for="package_return_date" class="form-label">Fecha de regreso</label>
                                         <div class="input-group">
-                                            <input type="date" id="package_return_date" class="form-control border-left-dark" required>
+                                            <input type="date" id="package_return_date" name="package_return_date" class="form-control formularioCampo border-left-dark" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
                                                         class="fas fa-calendar-week"></i></span>
@@ -155,14 +156,14 @@
                                     <div class="form-group col-6">
                                         <label for="package_departure_place" class="form-label">Lugar de salida</label>
                                         <div class="input-group">
-                                            <input type="text" id="package_departure_place" class="form-control border-left-dark"
+                                            <input type="text" id="package_departure_place" name="package_departure_place" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Ingrese el lugar de encuentro" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
                                                         class="fas fa-location-arrow"></i></span>
                                             </div>
                                             <div class="invalid-feedback">
-                                                Este campo es obligatorio.
+                                                En este campo solo se permiten letras
                                             </div>
                                         </div>
                                     </div>
@@ -192,7 +193,7 @@
                                     <div class="form-group col-4">
                                         <label for="package_price" class="form-label">Precio</label>
                                         <div class="input-group">
-                                            <input type="number" id="package_price" class="form-control border-left-dark"
+                                            <input type="number" id="package_price" name="package_price" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Precio del paquete" required>
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text rounded-right"><i
@@ -205,7 +206,7 @@
                                     </div>
                                     <div class="form-group col-4">
                                         <label for="package_quotas" class="form-label">Cupos</label>
-                                            <input type="number" id="package_quotas" class="form-control border-left-dark"
+                                            <input type="number" id="package_quotas" name="package_quotas" class="form-control formularioCampo border-left-dark"
                                                 placeholder="Ingrese el número de cupos" required>
                                             <div class="invalid-feedback">
                                                 Este campo es obligatorio.
@@ -214,7 +215,7 @@
                                     <div class="form-group col-4">
                                         <label for="status" class="form-label">Estado</label>
                                         <div class="input-group">
-                                        <select class="custom-select border-left-dark" id="status" required>
+                                        <select class="custom-select border-left-dark form-control formularioCampo" id="status" name="status" required>
                                             <option selected disabled value="">Seleccione un estado</option>
                                             <option value="1">Habilitado</option>
                                             <option value="2">Deshabilitado</option>
@@ -280,50 +281,8 @@
     <!--SweetAlert JavaScript-->
     <script src="../../js/sweetalert2.all.min.js"></script>
 
-    <script>
-        //Form validation
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
+    <script src="../../../js/packagesValidation.js"></script>
 
-        //SweetAlert2 alerts
-        $('#cancelButton').click(() => {
-            Swal.fire({
-                title: 'Cancelado!',
-                text: 'Has cancelado el proceso.',
-                icon: 'error',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 1200
-            })
-        })
-
-        // $('#saveButton').click(() => {
-        //     Swal.fire({
-        //         title: 'Tarea exitosa!',
-        //         text: 'Se ha agregado el (nombre).',
-        //         icon: 'success',
-        //         showConfirmButton: false,
-        //         timerProgressBar: true,
-        //         timer: 1200
-        //     })
-        // })
-    </script>
 </body>
 
 
