@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Editar Usuario</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+
+</head>
+
+<body id="page-top">
+
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                {{> topbar}}
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Form name -->
+                    <div class="card shadow border-left-dark mb-4">
+                        <div class="card-header py-3">
+                            <h4 class="m-0 font-weight-bold text-dark"><span>Editar Usuario</span></h4>
+                        </div>
+                        <form class="needs-validation" novalidate>
+                            <div class=" card-body d-flex justify-content-center">
+                                <div class="w-75 p-2">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="name" class="form-label">Nombre</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="name" class="form-control border-left-dark rounded-right"
+                                                        value="Alexander Vargas" required readonly>
+                                                    <div class="invalid-feedback">
+                                                        Este campo es obligatorio.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email" class="form-label">Correo</label>
+                                                <div class="input-group">
+                                                    <input type="email" id="email" class="form-control border-left-dark"
+                                                        value="alexandervar50@gmail.com" required>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text rounded-right"
+                                                            id="basic-addon1"><i class="fas fa-at"></i></span>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Este campo es obligatorio.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" class="form-label">Contraseña</label>
+                                                <div class="input-group">
+                                                    <input type="password" id="password"
+                                                        class="form-control border-left-dark" value="12345" required>
+                                                    <div class="input-group-prepend">
+                                                        <button id="show_password" class="btn btn-dark rounded-right"
+                                                            type="button" onclick="mostrarPassword()"> <span
+                                                                class="fa fa-eye-slash icon "></span> </button>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Este campo es obligatorio.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="editUser_ID" class="form-label">Documento</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="editUser_ID"
+                                                        class="form-control border-left-dark" value="10153785902"
+                                                        required readonly>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text rounded-right"
+                                                            id="basic-addon1"><i class="fas fa-address-card"></i></span>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Este campo es obligatorio.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="rol" class="form-label">Rol</label>
+                                                <select class="custom-select border-left-dark" id="rol" required>
+                                                    <option disabled value="">Seleccione</option>
+                                                    <option value="1">Administrador</option>
+                                                    <option selected value="2">Cliente</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor seleccione una opción.
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="estado" class="form-label">Estado</label>
+                                                <select class="custom-select border-left-dark" id="estado" required>
+                                                    <option disabled value="">Seleccione</option>
+                                                    <option value="1">Habilitado</option>
+                                                    <option selected value="2">Inhabilitado</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor seleccione una opción.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" id="cancelButton" class="btn btn-danger">Cancelar</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" id="saveButton" class="btn btn-success">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            {{> footer}}
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    {{> logoutModal}}
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../../js/sb-admin-2.min.js"></script>
+
+    <!--SweetAlert JavaScript-->
+    <script src="../../js/sweetalert2.all.min.js"></script>
+
+    <script>
+        //Form validation
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        //SweetAlert2 alerts
+        $('#cancelButton').click(() => {
+            Swal.fire({
+                title: 'Cancelado!',
+                text: 'Has cancelado el proceso.',
+                icon: 'error',
+                showConfirmButton: false,
+                timerProgressBar: true,
+                timer: 1200
+            })
+        })
+
+        // $('#saveButton').click(() => {
+        //     Swal.fire({
+        //         title: 'Tarea exitosa!',
+        //         text: 'Se ha agregado el (nombre).',
+        //         icon: 'success',
+        //         showConfirmButton: false,
+        //         timerProgressBar: true,
+        //         timer: 1200
+        //     })
+        // })
+
+
+
+        function mostrarPassword() {
+            var cambio = document.getElementById("password");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+
+        $(document).ready(function () {
+            //CheckBox mostrar contraseña
+            $('#ShowPassword').click(function () {
+                $('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+            });
+        });
+    </script>
+</body>
+
+
+</html>
