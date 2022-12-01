@@ -121,7 +121,15 @@ app.get('/editEmployees', function (req, res) {
 
 //-----------------------------------------------------------------
 app.get('/users', function (req, res) {
-    res.render(__dirname + '/public/views/admin/users.hbs')
+    res.render(__dirname + '/public/views/admin/Users/users.hbs')
+})
+
+app.get('/editUser', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Users/editUser.hbs')
+})
+
+app.get('/createUser', function(req, res){
+    res.render(__dirname + '/public/views/admin/Users/createUser.hbs')
 })
 
 app.get('/profile', function (req, res) {
