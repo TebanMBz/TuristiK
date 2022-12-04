@@ -12,13 +12,13 @@
     <title>Crear Pedido Admin</title>
 
     <!-- Custom fonts for this template -->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
 
@@ -52,8 +52,8 @@
                         <div class="card-header py-3">
                             <h4 class="m-0 font-weight-bold text-dark"><span>Agregar Pedido</span></h4>
                         </div>
-                        <form class="needs-validation" action="/createBeneficiary" novalidate>
-                            <div class=" card-body d-flex justify-content-center">
+                        <form id="form" novalidate>
+                            <div class="card-body d-flex justify-content-center">
                                 <div class="w-75 p-2">
                                     <div class="row">
                                         <div class="col">
@@ -83,7 +83,7 @@
                                                                 class="fas fa-users"></i></span>
                                                     </div>
                                                     <div class="invalid-feedback">
-                                                        Por favor ingrese una cantidad de beneficiarios.
+                                                        Por favor ingrese unicamente números.
                                                     </div>
                                                 </div>
                                             </div>
@@ -92,19 +92,19 @@
                                     <div class="form-group mb-0">
                                         <div class="row">
                                             <div class="col">
-                                                <label for="create_order_client_id" class="form-label">Persona
+                                                <label for="create_order_costumer_id" class="form-label">Persona
                                                     titular</label>
                                             </div>
                                             <div class="col d-flex justify-content-end align-items-end">
                                                 <div class="form-text d-flex justify-content-end">
                                                     <span class="font-italic" style="font-size: 15px;">¿El titular no
-                                                        tiene una cuenta? <a class="text-decoration-none" href="#">
+                                                        tiene una cuenta? <a class="text-decoration-none" href="/">
                                                             Crear cuenta.</a></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="input-group">
-                                            <select id="create_order_client_id" class="custom-select border-left-dark"
+                                            <select id="create_order_costumer_id" class="custom-select border-left-dark"
                                                 required>
                                                 <option selected disabled value="">Por favor busque el número del
                                                     documento de identidad de la persona titular.</option>
@@ -116,7 +116,8 @@
                                                         class="fas fa-user"></i></span>
                                             </div>
                                             <div class="invalid-feedback">
-                                                Por favor seleccione el documento de identidad del titular.
+                                                Por favor seleccione los datos de la persona titular o cree una cuenta
+                                                para el mismo.
                                             </div>
                                         </div>
                                     </div>
@@ -128,7 +129,7 @@
                                         <button type="button" id="cancelButton" class="btn btn-danger">Cancelar</button>
                                     </div>
                                     <div class="col">
-                                        <button type="submit" id="saveButton" class="btn btn-success">Siguiente</button>
+                                        <button type="button" id="saveButton" class="btn btn-success">Siguiente</button>
                                     </div>
                                 </div>
                             </div>
@@ -159,64 +160,19 @@
     {{> logoutModal}}
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
+    <script src="../../../js/sb-admin-2.min.js"></script>
 
     <!--SweetAlert JavaScript-->
-    <script src="../../js/sweetalert2.all.min.js"></script>
+    <script src="../../../js/sweetalert2.all.min.js"></script>
 
-    <script>
-        //Form validation
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-        //SweetAlert2 alerts
-        $('#cancelButton').click(() => {
-            Swal.fire({
-                title: 'Cancelado!',
-                text: 'Has cancelado el proceso.',
-                icon: 'error',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 1200
-            }).then(function () {
-                window.location = '/orders'
-            })
-        })
-
-        // $('#saveButton').click(() => {
-        //     Swal.fire({
-        //         title: 'Tarea exitosa!',
-        //         text: 'Se ha agregado el (nombre).',
-        //         icon: 'success',
-        //         showConfirmButton: false,
-        //         timerProgressBar: true,
-        //         timer: 1200
-        //     })
-        // })
-    </script>
+    <script src="../../../js/orders/create.js"></script>
 </body>
 
 

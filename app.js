@@ -84,41 +84,13 @@ app.get('/editCostumers', function (req, res) {
 })
 //-------------------------------------------------------------------
 
-app.get('/orders', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/index')
-})
+//Orders ------------------------------------------------------------
 
-app.get('/createOrder', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/create')
-})
+app.use('/orders/', require('./public/routes/orders/orders'))
+app.use('/beneficiaries/', require('./public/routes/orders/beneficiaries/beneficiaries'))
+app.use('/payments/', require('./public/routes/orders/payments/payments'))
+//------------------------------------------------------------
 
-app.get('/editOrder', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/edit')
-})
-
-app.get('/beneficiaries', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/beneficiaries/listBeneficiaries')
-})
-
-app.get('/createBeneficiary', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/beneficiaries/create')
-})
-
-app.get('/confirmBeneficiaries', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/beneficiaries/confirmBeneficiaries')
-})
-
-app.get('/payments', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/payments/listPayments')
-})
-
-app.get('/editPayment', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/payments/edit')
-})
-
-app.get('/createPayment', function (req, res) {
-    res.render(__dirname + '/public/views/admin/orders/payments/create')
-})
 
 app.get('/employees', function (req, res) {
     res.render(__dirname + '/public/views/admin/Employees/employees.hbs')
