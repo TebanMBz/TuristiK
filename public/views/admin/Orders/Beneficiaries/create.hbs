@@ -12,13 +12,13 @@
     <title>Crear Beneficiario Admin</title>
 
     <!-- Custom fonts for this template -->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
 
@@ -50,107 +50,29 @@
                     <!-- Form name -->
                     <div class="card shadow border-left-dark mb-4">
                         <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-dark"><span>Agregar nombre</span></h4>
+                            <h4 class="m-0 font-weight-bold text-dark"><span>Formulario de Beneficiarios</span></h4>
                         </div>
-                        <form class="needs-validation" action="/confirmBeneficiaries" novalidate>
-                            <div class=" card-body d-flex justify-content-center">
+                        <form id="form" novalidate>
+                            <div class="card-body d-flex justify-content-center">
                                 <div class="w-100 p-2">
-                                    <div class="text-dark mb-3">
-                                        <h4>Beneficiario 1</h4>
+                                    <div id="beneficiaries_form" class="container-fluid m-0 p-0">
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_name" class="form-label">Nombres</label>
-                                                <input type="text" id="create_beneficiary_name" class="form-control"
-                                                    placeholder="Nombres del beneficiario" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese los nombres del beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_last_name" class="form-label">Apellidos</label>
-                                                <input type="text" id="create_beneficiary_last_name"
-                                                    class="form-control" placeholder="Apellidos del beneficiario"
-                                                    required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese los apellidos del beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_document" class="form-label">Documento</label>
-                                                <input type="text" id="create_beneficiary_document" class="form-control"
-                                                    placeholder="Documento del beneficiario" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese el documento del beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_birth_date" class="form-label">Fecha de
-                                                    nacimiento</label>
-                                                <input type="date" id="create_beneficiary_birth_date"
-                                                    class="form-control" placeholder="Documento del beneficiario"
-                                                    required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese la fecha de nacimiento del beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="beneficiary_address" class="form-label">Dirección</label>
-                                        <input type="text" id="create_beneficiary_address" class="form-control"
-                                            placeholder="Ej: País - Ciudad - Barrio - Dirección" required>
-                                        <div class="invalid-feedback">
-                                            Por favor ingrese la dirección del beneficiario.
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_phone" class="form-label">Teléfono</label>
-                                                <input type="text" id="create_beneficiary_phone" class="form-control"
-                                                    placeholder="Teléfono del beneficiario" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese el teléfono del beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="beneficiary_eps" class="form-label">Tipo de
-                                                    EPS</label>
-                                                <input type="text" id="create_beneficiary_eps" class="form-control"
-                                                    placeholder="EPS del beneficiario" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese la eps a la cual pertenece el
-                                                    beneficiario.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a onclick=""
-                                        class="d-flex align-items-center justify-content-end text-decoration-none text-dark">
-                                        <h4 class="m-0 font-weight-bold">Agregar Beneficiario</h4>
-                                        <i class="ml-2 fas fa-plus-circle fa-2x"></i>
-                                    </a>
+                                    {{!-- <div class="text-dark d-flex align-items-center justify-content-end">
+                                        <a class="d-flex align-items-center text-decoration-none text-dark" href="#"
+                                            id="new_beneficiary_form">
+                                            <h4 class="m-0 font-weight-bold">Añadir otro beneficiario</h4>
+                                            <i class="ml-2 fas fa-plus-square fa-2x"></i>
+                                        </a>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="card-footer d-flex justify-content-end">
                                 <div class="row">
                                     <div class="col">
-                                        <button type="button" id="cancelButton" class="btn btn-danger">Cancelar</button>
+                                        <button type="button" id="backButton" class="btn btn-danger">Regresar</button>
                                     </div>
                                     <div class="col">
-                                        <button type="submit" id="saveButton" class="btn btn-success">Siguiente</button>
+                                        <button type="button" id="saveButton" class="btn btn-success">Siguiente</button>
                                     </div>
                                 </div>
                             </div>
@@ -181,63 +103,20 @@
     {{> logoutModal}}
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
+    <script src="../../../../js/sb-admin-2.min.js"></script>
 
     <!--SweetAlert JavaScript-->
-    <script src="../../js/sweetalert2.all.min.js"></script>
+    <script src="../../../../js/sweetalert2.all.min.js"></script>
 
-    <script>
-        //Form validation
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-        //SweetAlert2 alerts
-        $('#cancelButton').click(() => {
-            Swal.fire({
-                title: 'Cancelado!',
-                text: 'Has cancelado el proceso.',
-                icon: 'error',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 1200
-            })
-        })
-
-        // $('#saveButton').click(() => {
-        //     Swal.fire({
-        //         title: 'Tarea exitosa!',
-        //         text: 'Se ha agregado el (nombre).',
-        //         icon: 'success',
-        //         showConfirmButton: false,
-        //         timerProgressBar: true,
-        //         timer: 1200
-        //     })
-        // })
-    </script>
+    <!-- JavaScript validations -->
+    <script src="../../../../js/orders/beneficiaries/create.js"></script>
 </body>
-
 
 </html>
