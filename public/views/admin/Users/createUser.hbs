@@ -200,6 +200,17 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="birthDateNewcostumer" class="form-label">Fecha de nacimiento</label>
+                                                <div class="input-group">
+                                                    <input type="date" id="birthDateNewcostumer"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su fecha de nacimiento"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Fecha invalida.
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
@@ -213,20 +224,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
                                             <div class="form-group">
-                                                <label for="birthDateNewcostumer" class="form-label">Fecha de nacimiento</label>
+                                                <label for="porfilePictureNewcostumer" class="form-label">Foto de perfil</label>
                                                 <div class="input-group">
-                                                    <input type="date" id="birthDateNewcostumer"
+                                                    <input accept=".jpg,.png" type="file" id="porfilePictureNewcostumer"
                                                         class="form-control border-left-dark rounded-right" placeholder="Digite su fecha de nacimiento"
-                                                        required>
+                                                        required onchange="validateporfilePictureNewcostumer()">
                                                     <div class="invalid-feedback">
-                                                        Fecha invalida.
+                                                        Imágen necesaria.
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
+                                            
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -313,6 +325,30 @@
 
         
         mostrarForm()
+
+        const validateporfilePictureNewcostumer = () => {
+            // Obtener nombre de archivo
+            let archivo = document.getElementById("porfilePictureNewcostumer").value,
+                // Obtener extensión del archivo
+                extension = archivo.substring(archivo.lastIndexOf("."), archivo.length);
+            // Si la extensión obtenida no está incluida en la lista de valores
+            // del atributo "accept", mostrar un error.
+            if (
+                document.getElementById("porfilePictureNewcostumer").getAttribute("accept").split(",").indexOf(extension) < 0
+            ) {
+                Swal.fire(
+                    {
+                        title: "Error!",
+                        text: "Archivo inválido. No se permite la extensión " + extension,
+                        icon: "error",
+                        showConfirmButton: false,
+                        timerProgressBar: true,
+                        timer: 2000,
+                    }
+                );
+                document.getElementById("porfilePictureNewcostumer").value = ''
+            }
+        };
         
     </script>
     <script src="../../../js/usersValidation.js"></script>

@@ -6,7 +6,7 @@ const expressions = {
   phone: /^\d{7,14}$/, // 7 a 14 numeros.
   document: /^\d{7,18}$/, // 7 a 20 numeros.
   number: /^[0-9]+$/,
-  date: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
+  date: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/,
 };
 
 const fields = {
@@ -19,7 +19,7 @@ const fields = {
   passwordConfirmNewUser: false,
   epsNewCostumer: false,
   addressNewCostumer: false,
-  dateBirthNewCostumer: true,
+  birthDateNewcostumer: false,
 };
 
 const inputs = document.querySelectorAll("#form input");
@@ -44,8 +44,8 @@ const validateForm = (e) => {
     case "addressNewCostumer":
       validateField(expressions.user, e.target, "addressNewCostumer");
       break;
-    case "dateBirthNewCostumer":
-      validateField(expressions.date, e.target, "dateBirthNewCostumer");
+    case "birthDateNewcostumer":
+      validateField(expressions.date, e.target, "birthDateNewcostumer");
       break;
     case "emailNewUser":
       validateField(expressions.email, e.target, "emailNewUser");
@@ -100,32 +100,46 @@ const validatePasswordNewUser = () => {
   }
 };
 
-$("#saveButton").click(() => {
+
+
+$("#saveButton").click(async () => {
   if (
-    (fields.nameNewUser &&
-      fields.lastNameNewUser &&
-      fields.identificationNewUser &&
-      fields.phoneNweUser &&
-      fields.epsNewCostumer &&
-      fields.addressNewCostumer &&
-      fields.dateBirthNewCostumer &&
-      fields.emailNewUser &&
-      fields.passwordNewUser &&
-      fields.passwordConfirmNewUser) ||
-    (fields.nameNewUser &&
-      fields.lastNameNewUser &&
-      fields.identificationNewUser &&
-      fields.phoneNweUser &&
-      fields.emailNewUser &&
-      fields.passwordNewUser &&
-      fields.passwordConfirmNewUser)
+    fields.nameNewUser &&
+    fields.lastNameNewUser &&
+    fields.identificationNewUser &&
+    fields.phoneNewUser &&
+    fields.emailNewUser &&
+    fields.passwordNewUser &&
+    fields.passwordConfirmNewUser
   ) {
-    Swal.fire(
+    await Swal.fire(
       {
         icon: "success",
         title: "Guardado correctamente",
         showConfirmButton: false,
-        timer: 2500,
+        timer: 5000,
+      },
+
+      (window.location = "/users")
+    );
+  } else if (
+    fields.nameNewUser &&
+    fields.lastNameNewUser &&
+    fields.identificationNewUser &&
+    fields.phoneNewUser &&
+    fields.epsNewCostumer &&
+    fields.addressNewCostumer &&
+    fields.birthDateNewcostumer &&
+    fields.emailNewUser &&
+    fields.passwordNewUser &&
+    fields.passwordConfirmNewUser
+  ) {
+    await Swal.fire(
+      {
+        icon: "success",
+        title: "Guardado correctamente",
+        showConfirmButton: false,
+        timer: 5000,
       },
 
       (window.location = "/users")
@@ -140,57 +154,61 @@ $("#saveButton").click(() => {
       timerProgressBar: true,
       timer: 1500,
     });
-    console.log(fields)
+    console.log(fields);
   }
 });
 
-
-$('#cancelButton').click(() => {
-    Swal.fire({
-        title: 'Cancelado!',
-        text: 'Has cancelado el proceso.',
-        icon: 'error',
-        showConfirmButton: false,
-        timerProgressBar: true,
-        timer: 1500
-    }).then(() => {
-        window.location = '/costumers'
-    })
-})
-
+$("#cancelButton").click(() => {
+  Swal.fire({
+    title: "Cancelado!",
+    text: "Has cancelado el proceso.",
+    icon: "error",
+    showConfirmButton: false,
+    timerProgressBar: true,
+    timer: 1500,
+  }).then(() => {
+    window.location = "/costumers";
+  });
+});
 
 function mostrarPassword() {
-    var cambio = document.getElementById("passwordNewUser");
-    if (cambio.type == "password") {
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    } else {
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-    }
+  var cambio = document.getElementById("passwordNewUser");
+  if (cambio.type == "password") {
+    cambio.type = "text";
+    $(".icon").removeClass("fa fa-eye-slash").addClass("fa fa-eye");
+  } else {
+    cambio.type = "password";
+    $(".icon").removeClass("fa fa-eye").addClass("fa fa-eye-slash");
+  }
 }
 
 $(document).ready(function () {
-    //CheckBox mostrar contraseña
-    $('#ShowPassword').click(function () {
-        $('#passwordNewUser').attr('type', $(this).is(':checked') ? 'text' : 'password');
-    });
+  //CheckBox mostrar contraseña
+  $("#ShowPassword").click(function () {
+    $("#passwordNewUser").attr(
+      "type",
+      $(this).is(":checked") ? "text" : "password"
+    );
+  });
 });
 
 function mostrarPasswordConfirm() {
-    var cambio = document.getElementById("passwordConfirmNewUser");
-    if (cambio.type == "password") {
-        cambio.type = "text";
-        $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    } else {
-        cambio.type = "password";
-        $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-    }
+  var cambio = document.getElementById("passwordConfirmNewUser");
+  if (cambio.type == "password") {
+    cambio.type = "text";
+    $(".icon2").removeClass("fa fa-eye-slash").addClass("fa fa-eye");
+  } else {
+    cambio.type = "password";
+    $(".icon2").removeClass("fa fa-eye").addClass("fa fa-eye-slash");
+  }
 }
 
 $(document).ready(function () {
-    //CheckBox mostrar contraseña
-    $('#ShowPasswordConfirm').click(function () {
-        $('#passwordConfirmNewUser').attr('type', $(this).is(':checked') ? 'text' : 'password');
-    });
+  //CheckBox mostrar contraseña
+  $("#ShowPasswordConfirm").click(function () {
+    $("#passwordConfirmNewUser").attr(
+      "type",
+      $(this).is(":checked") ? "text" : "password"
+    );
+  });
 });
