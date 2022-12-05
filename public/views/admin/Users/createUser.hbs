@@ -52,11 +52,37 @@
                         <div class="card-header py-3">
                             <h4 class="m-0 font-weight-bold text-dark"><span>Agregar Usuario</span></h4>
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form id="form" class="needs-validation" novalidate>
                             <div class=" card-body d-flex justify-content-center">
                                 <div class="w-75 p-2">
                                     <div class="row">
                                         <div class="col">
+                                            <div class="form-group">
+                                                <label for="nameNewUser" class="form-label">Nombre</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="nameNewUser"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su nombre"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Este campo no permite números ni caracteres especiales.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="identificationNewUser" class="form-label">Documento</label>
+                                                <div class="input-group">
+                                                    <input type="num" id="identificationNewUser"
+                                                        class="form-control border-left-dark" placeholder="Digite su documento"
+                                                        required>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text rounded-right"
+                                                                id="basic-addon1"><i class="fas fa-id-card"></i></span>
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            No se permiten letras ni caracteres especiales.
+                                                        </div>
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="emailNewUser" class="form-label">Correo</label>
                                                 <div class="input-group">
@@ -68,7 +94,7 @@
                                                             id="basic-addon1"><i class="fas fa-at"></i></span>
                                                     </div>
                                                     <div class="invalid-feedback">
-                                                        Este campo es obligatorio.
+                                                        Email invalido.
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,40 +110,123 @@
                                                                 class="fa fa-eye-slash icon "></span> </button>
                                                     </div>
                                                     <div class="invalid-feedback">
-                                                        Este campo es obligatorio.
+                                                        La contraseña debe de tener mínimo 8 caracteres.
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="statusNewUser" class="form-label">Estado</label>
-                                                <select class="custom-select border-left-dark" id="statusNewUser"
-                                                    required>
-                                                    <option disabled selected value="">Seleccione</option>
-                                                    <option value="1">Habilitado</option>
-                                                    <option value="2">Inhabilitado</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                    Por favor seleccione una opción.
+                                                <label for="lastNameNewUser" class="form-label">Apellido</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="lastNameNewUser"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su apellido"
+                                                        required>
+                                                        <div class="invalid-feedback">
+                                                            Este campo no permite números ni caracteres especiales.
+                                                        </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="roleNewUser" class="form-label">Rol</label>
-                                                <select class="custom-select border-left-dark" id="roleNewUser" required
-                                                    onchange="mostrarForm()">
-                                                    <option disabled selected value="">Seleccione</option>
-                                                    <option value="1">Administrador</option>
-                                                    <option value="2">Cliente</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                    Por favor seleccione una opción.
+                                                <label for="phoneNewUser" class="form-label">Teléfono</label>
+                                                <div class="input-group">
+                                                    <input type="number" id="phoneNewUser"
+                                                        class="form-control border-left-dark" placeholder="Digite su número de teléfono"
+                                                        required>
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text rounded-right"
+                                                                id="basic-addon1"><i class="fas fa-phone"></i></span>
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            No se permiten letras ni caracteres especiales.
+                                                        </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="form-group col-6">
+                                                    <label for="roleNewUser" class="form-label">Rol</label>
+                                                    <select class="custom-select border-left-dark" id="roleNewUser" required
+                                                        onchange="mostrarForm()">
+                                                        <option disabled selected value="">Seleccione</option>
+                                                        <option value="1">Administrador</option>
+                                                        <option value="2">Cliente</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione una opción.
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                    <label for="statusNewUser" class="form-label">Estado</label>
+                                                    <select class="custom-select border-left-dark" id="statusNewUser"
+                                                        required>
+                                                        <option disabled selected value="">Seleccione</option>
+                                                        <option value="1">Habilitado</option>
+                                                        <option value="2">Inhabilitado</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Por favor seleccione una opción.
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="passwordConfirmNewUser" class="form-label">Confirmar Contraseña</label>
+                                                <div class="input-group">
+                                                    <input type="password" id="passwordConfirmNewUser"
+                                                        class="form-control border-left-dark"
+                                                        placeholder="Confirme su contraseña" required>
+                                                    <div class="input-group-prepend">
+                                                        <button id="show_passwordConfirm" class="btn btn-dark rounded-right"
+                                                            type="button" onclick="mostrarPasswordConfirm()"> <span
+                                                                class="fa fa-eye-slash icon2 "></span> </button>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Las contraseñas no coinciden.
+                                                    </div>
+                                                </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                     <div class="row" id="FormUserType">
-
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="epsNewCostumer" class="form-label">EPS</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="epsNewCostumer"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su EPS"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Este campo no permite números ni caracteres especiales.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="addressNewCostumer" class="form-label">Dirección</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="addressNewCostumer"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su dirección"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        No se permiten más de 20 caracteres.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="birthDateNewcostumer" class="form-label">Fecha de nacimiento</label>
+                                                <div class="input-group">
+                                                    <input type="date" id="birthDateNewcostumer"
+                                                        class="form-control border-left-dark rounded-right" placeholder="Digite su fecha de nacimiento"
+                                                        required>
+                                                    <div class="invalid-feedback">
+                                                        Fecha invalida.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -191,206 +300,22 @@
             }, false);
         })();
 
-        //SweetAlert2 alerts
-        $('#cancelButton').click(() => {
-            Swal.fire({
-                title: 'Cancelado!',
-                text: 'Has cancelado el proceso.',
-                icon: 'error',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 1200
-            })
-        })
-
-        $('#saveButton').click(() => {
-            Swal.fire({
-                title: 'Tarea exitosa!',
-                text: 'Se ha agregado el Usuario.',
-                icon: 'success',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 1200
-            })
-        })
-
-
-
-        function mostrarPassword() {
-            var cambio = document.getElementById("password");
-            if (cambio.type == "password") {
-                cambio.type = "text";
-                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-            } else {
-                cambio.type = "password";
-                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-            }
-        }
-
-        $(document).ready(function () {
-            //CheckBox mostrar contraseña
-            $('#ShowPassword').click(function () {
-                $('#password').attr('type', $(this).is(':checked') ? 'text' : 'password');
-            });
-        });
 
         function mostrarForm() {
             let role = document.getElementById('roleNewUser').value
 
-            if (role == 1) {
-                document.getElementById('FormUserType').innerHTML = `
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="nameNewEmployee" class="form-label">Nombre</label>
-                                <div class="input-group">
-                                    <input type="text" id="nameNewEmployee"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su nombre"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Este campo es obligatorio.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="identificationNewEmployee" class="form-label">Documento</label>
-                                <div class="input-group">
-                                    <input type="num" id="identificationNewEmployee"
-                                        class="form-control border-left-dark" placeholder="Digite su documento"
-                                        required>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text rounded-right"
-                                                id="basic-addon1"><i class="fas fa-id-card"></i></span>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="lastNameNewEmployee" class="form-label">Apellido</label>
-                                <div class="input-group">
-                                    <input type="text" id="lastNameNewEmployee"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su apellido"
-                                        required>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="telNewEmployee" class="form-label">Teléfono</label>
-                                <div class="input-group">
-                                    <input type="number" id="telNewEmployee"
-                                        class="form-control border-left-dark" placeholder="Digite su número de teléfono"
-                                        required>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text rounded-right"
-                                                id="basic-addon1"><i class="fas fa-phone"></i></span>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                        </div>`
-            } else {
-                document.getElementById('FormUserType').innerHTML = `
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="nameNewEmployee" class="form-label">Nombre</label>
-                                <div class="input-group">
-                                    <input type="text" id="nameNewEmployee"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su nombre"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Este campo es obligatorio.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="identificationNewEmployee" class="form-label">Documento</label>
-                                <div class="input-group">
-                                    <input type="num" id="identificationNewEmployee"
-                                        class="form-control border-left-dark" placeholder="Digite su documento"
-                                        required>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text rounded-right"
-                                                id="basic-addon1"><i class="fas fa-id-card"></i></span>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="epsNewCostumer" class="form-label">EPS</label>
-                                <div class="input-group">
-                                    <input type="text" id="epsNewCostumer"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su EPS"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Este campo es obligatorio.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="lastNameNewEmployee" class="form-label">Apellido</label>
-                                <div class="input-group">
-                                    <input type="text" id="lastNameNewEmployee"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su apellido"
-                                        required>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="telNewEmployee" class="form-label">Teléfono</label>
-                                <div class="input-group">
-                                    <input type="number" id="telNewEmployee"
-                                        class="form-control border-left-dark" placeholder="Digite su número de teléfono"
-                                        required>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text rounded-right"
-                                                id="basic-addon1"><i class="fas fa-phone"></i></span>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            Este campo es obligatorio.
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="locationNewUser" class="form-label">Dirección</label>
-                                <div class="input-group">
-                                    <input type="text" id="locationNewUser"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su dirección"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Este campo es obligatorio.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="birthDateNewcostumer" class="form-label">Fecha de nacimiento</label>
-                                <div class="input-group">
-                                    <input type="date" id="birthDateNewcostumer"
-                                        class="form-control border-left-dark rounded-right" placeholder="Digite su fecha de nacimiento"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Este campo es obligatorio.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`
+            if (role ==2 ){
+                $('#FormUserType').show()
+            }else{
+                $('#FormUserType').hide()
             }
         }
+
+        
+        mostrarForm()
+        
     </script>
+    <script src="../../../js/usersValidation.js"></script>
 </body>
 
 
