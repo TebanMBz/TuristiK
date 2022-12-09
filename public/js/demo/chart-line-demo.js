@@ -28,17 +28,17 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
-var ctx = document.getElementById("myBarChart");
+var ctx = document.getElementById("myLineChart");
 var myBarChart = new Chart(ctx, {
-  type: 'bar',
+  type: 'line',
   data: {
     labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
     datasets: [{
-      label: "Monto",
+      label: "Cantidad de paquetes",
       backgroundColor: "#5a5c69",
-      hoverBackgroundColor: "#858796",
+      hoverBackgroundColor: "white",
       borderColor: "#858796",
-      data: [600000, 200000, 350000, 120000, 340000, 100000, 820000, 240000, 950000, 150000, 540000, 200000 ],
+      data: [13, 45, 23, 16, 34, 46, 28, 24, 95, 15, 54, 20 ],
     }],
   },
   options: {
@@ -68,12 +68,9 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 1000000,
+          max: 100,
           maxTicksLimit: 8,
-          padding: 10,
-          callback: function(value, index, values) {
-            return '$' + number_format(value);
-          }
+          padding: 10
         },
         gridLines: {
           color: "rgb(234, 236, 244)",

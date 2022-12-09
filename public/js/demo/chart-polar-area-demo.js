@@ -3,14 +3,14 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
-var ctx = document.getElementById("myPieChart");
+var ctx = document.getElementById("myPolarChart");
 var myPieChart = new Chart(ctx, {
-  type: 'doughnut',
+  type: 'polarArea',
   data: {
-    labels: ["Piedra el peñol", "San Andres", "Tolu", "Punta Gallinas, La Guajira", "Caño Cristales, Meta"],
+    labels: ["Piedra el peñol", "San Andres", "Tolu", "Punta Gallinas, La Guajira", "Caño Cristales, Meta", "Desierto de la Tatacoa,", "Río Claro"],
     datasets: [{
-      data: [35, 40, 25, 40, 25],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#2cc22a', '#4619DF'],
+      data: [35, 40, 25, 40, 25, 15, 38],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#2cc22a', '#4619DF', "#3137ED", "#00FFD8"],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#1cc88a', '#36b9cc'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
