@@ -31,7 +31,7 @@ body::-webkit-scrollbar-thumb {
 
 .sideBar{
     width: 14rem !important;
-    margin-right: 14px;
+    margin-right: 20px;
 }
 
 .image-container {
@@ -90,3 +90,4 @@ body::-webkit-scrollbar-thumb {
     color: white;
     font-weight: bold;
 }
+
