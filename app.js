@@ -122,8 +122,13 @@ app.get('/profile', function (req, res) {
     res.render(__dirname + '/public/views/admin/profile.hbs')
 })
 
+app.get('/details', function (req, res) {
+    res.render(__dirname + '/public/views/admin/Packages/packageDetail')
+})
 app.get('*', function (req, res) {
     res.render(__dirname + '/public/views/admin/404.hbs')
 })
+
+
 
 app.listen(port)
